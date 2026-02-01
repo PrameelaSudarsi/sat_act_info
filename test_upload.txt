@@ -1,0 +1,14 @@
+This is a test SAT document for upload testing.
+
+SAT Math Practice:
+1. Linear equations: ax + b = c
+2. Quadratic equations: ax² + bx + c = 0
+3. Functions and their properties
+
+SAT Reading Practice:
+- Main idea identification
+- Supporting details
+- Inference questions
+- Vocabulary in context
+
+This document should be processed and added to the knowledge base successfully.
