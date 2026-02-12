@@ -148,10 +148,108 @@ const SAT2026StudyGuide = () => {
             </AccordionDetails>
           </Accordion>
 
+          {/* Detailed SAT English Syllabus */}
+          <Accordion>
+            <AccordionSummary expandIcon={<ExpandMoreIcon />}>
+              <Typography variant="h6" fontWeight="bold">📖 Detailed SAT English Syllabus</Typography>
+            </AccordionSummary>
+            <AccordionDetails>
+              <Box sx={{ mb: 3 }}>
+                <Typography variant="subtitle1" fontWeight="bold" color="primary" gutterBottom>
+                  I. Craft & Structure (13-15 questions)
+                </Typography>
+                <ul style={{ marginTop: 0, paddingLeft: 20 }}>
+                  <li>Words in Context: Determine meaning of words/phrases in context</li>
+                  <li>Text Structure and Purpose: Analyze overall structure and purpose</li>
+                  <li>Cross-Text Connections: Compare and synthesize information from paired texts</li>
+                </ul>
+              </Box>
+
+              <Box sx={{ mb: 3 }}>
+                <Typography variant="subtitle1" fontWeight="bold" color="secondary" gutterBottom>
+                  II. Information & Ideas (12-14 questions)
+                </Typography>
+                <ul style={{ marginTop: 0, paddingLeft: 20 }}>
+                  <li>Central Ideas and Details: Identify main ideas and supporting details</li>
+                  <li>Command of Evidence: Select best textual evidence</li>
+                  <li>Inferences: Draw logical conclusions from text</li>
+                  <li>Quantitative Information: Interpret data from graphs and tables</li>
+                </ul>
+              </Box>
+
+              <Box sx={{ mb: 3 }}>
+                <Typography variant="subtitle1" fontWeight="bold" color="success.main" gutterBottom>
+                  III. Standard English Conventions (11-15 questions)
+                </Typography>
+                <ul style={{ marginTop: 0, paddingLeft: 20 }}>
+                  <li>Sentence Boundaries: Proper use of periods, semicolons, commas</li>
+                  <li>Subordination and Coordination: Connecting clauses correctly</li>
+                  <li>Verb Forms: Subject-verb agreement, tense consistency</li>
+                  <li>Pronouns: Pronoun-antecedent agreement and clarity</li>
+                </ul>
+              </Box>
+
+              <Box>
+                <Typography variant="subtitle1" fontWeight="bold" color="warning.main" gutterBottom>
+                  IV. Expression of Ideas (8-12 questions)
+                </Typography>
+                <ul style={{ marginTop: 0, paddingLeft: 20 }}>
+                  <li>Rhetorical Synthesis: Combine information from notes effectively</li>
+                  <li>Transitions: Choose appropriate connecting words (however, therefore, etc.)</li>
+                </ul>
+              </Box>
+            </AccordionDetails>
+          </Accordion>
+
+          {/* ACT Overview */}
+          <Accordion>
+            <AccordionSummary expandIcon={<ExpandMoreIcon />}>
+              <Typography variant="h6" fontWeight="bold">📊 ACT Test Overview</Typography>
+            </AccordionSummary>
+            <AccordionDetails>
+              <Typography variant="subtitle1" fontWeight="bold" gutterBottom>ACT Math (60 questions / 60 minutes)</Typography>
+              <TableContainer component={Paper} variant="outlined" sx={{ mb: 3 }}>
+                <Table size="small">
+                  <TableHead>
+                    <TableRow sx={{ bgcolor: 'secondary.light' }}>
+                      <TableCell sx={{ fontWeight: 'bold', color: 'white' }}>Topic</TableCell>
+                      <TableCell sx={{ fontWeight: 'bold', color: 'white' }}>Questions</TableCell>
+                    </TableRow>
+                  </TableHead>
+                  <TableBody>
+                    <TableRow><TableCell>Pre-Algebra</TableCell><TableCell>12-14</TableCell></TableRow>
+                    <TableRow><TableCell>Elementary Algebra</TableCell><TableCell>10-12</TableCell></TableRow>
+                    <TableRow><TableCell>Intermediate Algebra</TableCell><TableCell>9-11</TableCell></TableRow>
+                    <TableRow><TableCell>Coordinate Geometry</TableCell><TableCell>9-11</TableCell></TableRow>
+                    <TableRow><TableCell>Plane Geometry</TableCell><TableCell>12-14</TableCell></TableRow>
+                    <TableRow><TableCell>Trigonometry</TableCell><TableCell>4-6</TableCell></TableRow>
+                  </TableBody>
+                </Table>
+              </TableContainer>
+
+              <Typography variant="subtitle1" fontWeight="bold" gutterBottom>ACT English (75 questions / 45 minutes)</Typography>
+              <TableContainer component={Paper} variant="outlined">
+                <Table size="small">
+                  <TableHead>
+                    <TableRow sx={{ bgcolor: 'secondary.light' }}>
+                      <TableCell sx={{ fontWeight: 'bold', color: 'white' }}>Category</TableCell>
+                      <TableCell sx={{ fontWeight: 'bold', color: 'white' }}>Questions</TableCell>
+                    </TableRow>
+                  </TableHead>
+                  <TableBody>
+                    <TableRow><TableCell>Production of Writing</TableCell><TableCell>29-32</TableCell></TableRow>
+                    <TableRow><TableCell>Knowledge of Language</TableCell><TableCell>13-19</TableCell></TableRow>
+                    <TableRow><TableCell>Conventions of Standard English</TableCell><TableCell>40-44</TableCell></TableRow>
+                  </TableBody>
+                </Table>
+              </TableContainer>
+            </AccordionDetails>
+          </Accordion>
+
           {/* Detailed Syllabus */}
           <Accordion>
             <AccordionSummary expandIcon={<ExpandMoreIcon />}>
-              <Typography variant="h6" fontWeight="bold">📖 Detailed Math Syllabus</Typography>
+              <Typography variant="h6" fontWeight="bold">📖 Detailed SAT Math Syllabus</Typography>
             </AccordionSummary>
             <AccordionDetails>
               
