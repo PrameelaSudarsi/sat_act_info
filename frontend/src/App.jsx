@@ -234,339 +234,134 @@ function App() {
           >
             <Toolbar />
             <Box sx={{ overflow: 'auto', p: 2.5, bgcolor: '#fafbfc', minHeight: '100vh' }}>
-              {/* Header Section */}
+              {/* Header */}
               <Paper elevation={0} sx={{ 
-                p: 3, 
+                p: 2.5, 
                 mb: 3, 
                 background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)', 
                 color: 'white', 
-                borderRadius: 3,
-                boxShadow: '0 4px 20px rgba(102, 126, 234, 0.25)'
+                borderRadius: 2
               }}>
-                <Typography variant="h6" fontWeight="700" gutterBottom sx={{ display: 'flex', alignItems: 'center', gap: 1, letterSpacing: '-0.01em' }}>
-                  🎆 SAT/ACT/AP Hub
+                <Typography variant="h6" fontWeight="700" sx={{ letterSpacing: '-0.01em' }}>
+                  🎓 Test Prep Center
                 </Typography>
-                <Typography variant="body2" sx={{ opacity: 0.95, fontSize: '0.85rem' }}>
-                  Complete test prep & college success
+                <Typography variant="caption" sx={{ opacity: 0.9 }}>
+                  SAT • ACT • AP Excellence
                 </Typography>
               </Paper>
 
-              {/* Quick Stats */}
-              <Grid container spacing={1} sx={{ mb: 3 }}>
-                <Grid item xs={6}>
-                  <Paper sx={{ p: 2, textAlign: 'center', bgcolor: '#e3f2fd', borderRadius: 2 }}>
-                    <Typography variant="h6" color="primary" fontWeight="bold">44</Typography>
-                    <Typography variant="caption" color="text.secondary">SAT Math Qs</Typography>
-                  </Paper>
-                </Grid>
-                <Grid item xs={6}>
-                  <Paper sx={{ p: 2, textAlign: 'center', bgcolor: '#f3e5f5', borderRadius: 2 }}>
-                    <Typography variant="h6" color="secondary" fontWeight="bold">70</Typography>
-                    <Typography variant="caption" color="text.secondary">Minutes</Typography>
-                  </Paper>
-                </Grid>
-              </Grid>
-
-              {/* SAT 2026 Pattern */}
-              <Card sx={{ mb: 3, border: '2px solid #1976d2', borderRadius: 3, bgcolor: '#e3f2fd' }}>
-                <CardContent sx={{ p: 2.5 }}>
-                  <Typography variant="subtitle1" fontWeight="700" gutterBottom sx={{ color: '#1565c0', display: 'flex', alignItems: 'center', gap: 1 }}>
-                    📋 SAT 2026 Math Pattern
-                  </Typography>
-                  <Box sx={{ display: 'flex', flexDirection: 'column', gap: 1 }}>
-                    <Box sx={{ display: 'flex', justifyContent: 'space-between', p: 1, bgcolor: 'white', borderRadius: 1 }}>
-                      <Typography variant="caption" fontWeight="600">Total Questions:</Typography>
-                      <Typography variant="caption">44 (22 per module)</Typography>
-                    </Box>
-                    <Box sx={{ display: 'flex', justifyContent: 'space-between', p: 1, bgcolor: 'white', borderRadius: 1 }}>
-                      <Typography variant="caption" fontWeight="600">Total Time:</Typography>
-                      <Typography variant="caption">70 min (35 per module)</Typography>
-                    </Box>
-                    <Box sx={{ display: 'flex', justifyContent: 'space-between', p: 1, bgcolor: 'white', borderRadius: 1 }}>
-                      <Typography variant="caption" fontWeight="600">Question Types:</Typography>
-                      <Typography variant="caption">75% MC, 25% Grid-in</Typography>
-                    </Box>
-                    <Box sx={{ display: 'flex', justifyContent: 'space-between', p: 1, bgcolor: 'white', borderRadius: 1 }}>
-                      <Typography variant="caption" fontWeight="600">Score Range:</Typography>
-                      <Typography variant="caption">200-800</Typography>
-                    </Box>
-                    <Box sx={{ p: 1, bgcolor: '#bbdefb', borderRadius: 1 }}>
-                      <Typography variant="caption" fontWeight="600" sx={{ color: '#0d47a1', display: 'block', mb: 0.5 }}>Calculator:</Typography>
-                      <Typography variant="caption" sx={{ color: '#1565c0', fontSize: '0.7rem' }}>Allowed for both modules. Built-in Desmos or approved handheld.</Typography>
-                    </Box>
+              {/* Study Resources */}
+              <Box sx={{ mb: 3 }}>
+                <Typography variant="subtitle2" fontWeight="600" sx={{ mb: 1.5, color: 'text.secondary' }}>
+                  Study Materials
+                </Typography>
+                <Box sx={{ display: 'flex', flexDirection: 'column', gap: 1 }}>
+                  <SAT2026StudyGuide />
+                  <StudyGuide />
+                  <MockTests />
+                  <CollegeAdmissionGuide />
+                  <Box sx={{ display: 'flex', gap: 1 }}>
+                    <SATSyllabus />
+                    <ACTSyllabus />
                   </Box>
-                </CardContent>
-              </Card>
+                </Box>
+              </Box>
 
               <Divider sx={{ my: 2 }} />
 
-              {/* Main Resources */}
-              <Card variant="outlined" sx={{ 
-                background: '#ffffff', 
-                color: '#333', 
-                mb: 3, 
-                borderRadius: 3,
-                border: '2px solid #667eea',
-                boxShadow: '0 4px 20px rgba(102, 126, 234, 0.15)'
-              }}>
-                <CardContent sx={{ p: 3 }}>
-                  <Typography variant="h6" fontWeight="bold" gutterBottom sx={{ display: 'flex', alignItems: 'center', gap: 1, color: '#667eea' }}>
-                    📚 Study Resources
-                  </Typography>
-                  <Box sx={{ display: 'flex', flexDirection: 'column', gap: 1.5 }}>
-                    <SAT2026StudyGuide />
-                    <StudyGuide />
-                    <MockTests />
-                    <CollegeAdmissionGuide />
-                    <Box sx={{ display: 'flex', gap: 1 }}>
-                      <SATSyllabus />
-                      <ACTSyllabus />
+              {/* Quick Info */}
+              <Box sx={{ mb: 3 }}>
+                <Typography variant="subtitle2" fontWeight="600" sx={{ mb: 1.5, color: 'text.secondary' }}>
+                  Quick Reference
+                </Typography>
+                <Paper sx={{ p: 2, bgcolor: '#f5f5f5', borderRadius: 2 }}>
+                  <Box sx={{ display: 'flex', flexDirection: 'column', gap: 1 }}>
+                    <Box sx={{ display: 'flex', justifyContent: 'space-between' }}>
+                      <Typography variant="caption">SAT Math:</Typography>
+                      <Typography variant="caption" fontWeight="600">44Q / 70min</Typography>
+                    </Box>
+                    <Box sx={{ display: 'flex', justifyContent: 'space-between' }}>
+                      <Typography variant="caption">SAT English:</Typography>
+                      <Typography variant="caption" fontWeight="600">54Q / 64min</Typography>
+                    </Box>
+                    <Box sx={{ display: 'flex', justifyContent: 'space-between' }}>
+                      <Typography variant="caption">ACT Math:</Typography>
+                      <Typography variant="caption" fontWeight="600">60Q / 60min</Typography>
                     </Box>
                   </Box>
-                </CardContent>
-              </Card>
+                </Paper>
+              </Box>
 
-              {/* AP Exam Resources */}
-              <Card variant="outlined" sx={{ 
-                background: 'linear-gradient(135deg, #fff3e0 0%, #ffe0b2 100%)', 
-                color: '#333', 
-                mb: 3, 
-                borderRadius: 3,
-                border: '2px solid #ff9800',
-                boxShadow: '0 4px 20px rgba(255, 152, 0, 0.15)'
-              }}>
-                <CardContent sx={{ p: 3 }}>
-                  <Typography variant="h6" fontWeight="bold" gutterBottom sx={{ display: 'flex', alignItems: 'center', gap: 1, color: '#f57c00' }}>
-                    🎓 AP Exam Center
-                  </Typography>
-                  
-                  {/* AP Test Categories */}
-                  <Box sx={{ mb: 2 }}>
-                    <Typography variant="subtitle2" fontWeight="bold" sx={{ color: '#e65100', mb: 1 }}>
-                      Available AP Tests:
-                    </Typography>
-                    <Box sx={{ display: 'flex', flexDirection: 'column', gap: 1 }}>
-                      <Box sx={{ display: 'flex', alignItems: 'center', gap: 1, p: 1, bgcolor: 'rgba(255,255,255,0.7)', borderRadius: 1 }}>
-                        <Typography sx={{ fontSize: '1.2rem' }}>∫</Typography>
-                        <Typography variant="caption" fontWeight="bold">AP Calculus AB</Typography>
-                      </Box>
-                      <Box sx={{ display: 'flex', alignItems: 'center', gap: 1, p: 1, bgcolor: 'rgba(255,255,255,0.7)', borderRadius: 1 }}>
-                        <Typography sx={{ fontSize: '1.2rem' }}>⚛️</Typography>
-                        <Typography variant="caption" fontWeight="bold">AP Physics 1</Typography>
-                      </Box>
-                      <Box sx={{ display: 'flex', alignItems: 'center', gap: 1, p: 1, bgcolor: 'rgba(255,255,255,0.7)', borderRadius: 1 }}>
-                        <Typography sx={{ fontSize: '1.2rem' }}>🧪</Typography>
-                        <Typography variant="caption" fontWeight="bold">AP Chemistry</Typography>
-                      </Box>
-                    </Box>
-                  </Box>
-
-                  {/* AP Score Distribution */}
-                  <Box sx={{ mb: 2 }}>
-                    <Typography variant="subtitle2" fontWeight="bold" sx={{ color: '#e65100', mb: 1 }}>
-                      AP Score Guide:
-                    </Typography>
-                    <Box sx={{ display: 'flex', flexDirection: 'column', gap: 0.5 }}>
-                      <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                        <Typography variant="caption" sx={{ color: '#bf360c' }}>Score 5:</Typography>
-                        <Typography variant="caption" fontWeight="bold" sx={{ color: '#2e7d32' }}>Extremely Qualified</Typography>
-                      </Box>
-                      <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                        <Typography variant="caption" sx={{ color: '#bf360c' }}>Score 4:</Typography>
-                        <Typography variant="caption" fontWeight="bold" sx={{ color: '#388e3c' }}>Well Qualified</Typography>
-                      </Box>
-                      <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                        <Typography variant="caption" sx={{ color: '#bf360c' }}>Score 3:</Typography>
-                        <Typography variant="caption" fontWeight="bold" sx={{ color: '#f57c00' }}>Qualified</Typography>
-                      </Box>
-                    </Box>
-                  </Box>
-
-                  {/* AP Official Links */}
-                  <Box>
-                    <Typography variant="subtitle2" fontWeight="bold" sx={{ color: '#e65100', mb: 1 }}>
-                      Official AP Resources:
-                    </Typography>
-                    <Box sx={{ display: 'flex', flexDirection: 'column', gap: 0.5 }}>
-                      <Button
-                        variant="text"
-                        size="small"
-                        href="https://apcentral.collegeboard.org"
-                        target="_blank"
-                        sx={{ justifyContent: 'flex-start', textTransform: 'none', color: '#e65100', fontSize: '0.75rem' }}
-                      >
-                        AP Central - College Board
-                      </Button>
-                      <Button
-                        variant="text"
-                        size="small"
-                        href="https://apstudents.collegeboard.org"
-                        target="_blank"
-                        sx={{ justifyContent: 'flex-start', textTransform: 'none', color: '#e65100', fontSize: '0.75rem' }}
-                      >
-                        AP Students Portal
-                      </Button>
-                      <Button
-                        variant="text"
-                        size="small"
-                        href="https://www.khanacademy.org/test-prep/ap-calculus-ab"
-                        target="_blank"
-                        sx={{ justifyContent: 'flex-start', textTransform: 'none', color: '#e65100', fontSize: '0.75rem' }}
-                      >
-                        Khan Academy AP Prep
-                      </Button>
-                    </Box>
-                  </Box>
-                </CardContent>
-              </Card>
-
-              {/* Test Prep Tips */}
-              <Card sx={{ bgcolor: '#fff3e0', border: '1px solid #ffb74d', borderRadius: 2, mb: 3 }}>
-                <CardContent sx={{ p: 2 }}>
-                  <Typography variant="subtitle2" fontWeight="bold" gutterBottom sx={{ color: '#f57c00', display: 'flex', alignItems: 'center', gap: 1 }}>
-                    💡 Test Prep Strategy
-                  </Typography>
-                  <Typography variant="caption" component="div" sx={{ color: '#bf360c' }}>
-                    <ul style={{ margin: 0, paddingLeft: 16, lineHeight: 1.6 }}>
-                      <li>SAT/ACT: Take 3-4 practice tests</li>
-                      <li>AP: Review past FRQs & scoring rubrics</li>
-                      <li>Focus on weak subject areas</li>
-                      <li>Time management is crucial</li>
-                      <li>Use official prep materials</li>
-                    </ul>
-                  </Typography>
-                </CardContent>
-              </Card>
-
-              {/* AP Exam Calendar */}
-              <Card sx={{ bgcolor: '#f3e5f5', border: '1px solid #ba68c8', borderRadius: 2, mb: 3 }}>
-                <CardContent sx={{ p: 2 }}>
-                  <Typography variant="subtitle2" fontWeight="bold" gutterBottom sx={{ color: '#8e24aa', display: 'flex', alignItems: 'center', gap: 1 }}>
-                    📅 2025 AP Exam Dates
-                  </Typography>
+              {/* Target Scores */}
+              <Box sx={{ mb: 3 }}>
+                <Typography variant="subtitle2" fontWeight="600" sx={{ mb: 1.5, color: 'text.secondary' }}>
+                  Target Scores
+                </Typography>
+                <Paper sx={{ p: 2, bgcolor: '#e8f5e9', borderRadius: 2 }}>
+                  <Typography variant="caption" fontWeight="600" sx={{ display: 'block', mb: 1 }}>SAT Benchmarks</Typography>
                   <Box sx={{ display: 'flex', flexDirection: 'column', gap: 0.5 }}>
                     <Box sx={{ display: 'flex', justifyContent: 'space-between' }}>
-                      <Typography variant="caption" sx={{ color: '#4a148c' }}>Calculus AB:</Typography>
-                      <Typography variant="caption" fontWeight="bold" sx={{ color: '#4a148c' }}>May 5, 2025</Typography>
+                      <Typography variant="caption">Ivy League:</Typography>
+                      <Typography variant="caption" fontWeight="600">1500+</Typography>
                     </Box>
                     <Box sx={{ display: 'flex', justifyContent: 'space-between' }}>
-                      <Typography variant="caption" sx={{ color: '#4a148c' }}>Physics 1:</Typography>
-                      <Typography variant="caption" fontWeight="bold" sx={{ color: '#4a148c' }}>May 7, 2025</Typography>
+                      <Typography variant="caption">Top 20:</Typography>
+                      <Typography variant="caption" fontWeight="600">1400+</Typography>
                     </Box>
                     <Box sx={{ display: 'flex', justifyContent: 'space-between' }}>
-                      <Typography variant="caption" sx={{ color: '#4a148c' }}>Chemistry:</Typography>
-                      <Typography variant="caption" fontWeight="bold" sx={{ color: '#4a148c' }}>May 12, 2025</Typography>
-                    </Box>
-                    <Typography variant="caption" sx={{ color: '#6a1b9a', fontStyle: 'italic', mt: 1 }}>
-                      Registration: February - March 2025
-                    </Typography>
-                  </Box>
-                </CardContent>
-              </Card>
-
-              {/* Score Targets */}
-              <Card sx={{ bgcolor: '#e8f5e8', border: '1px solid #4caf50', borderRadius: 2, mb: 3 }}>
-                <CardContent sx={{ p: 2 }}>
-                  <Typography variant="subtitle2" fontWeight="bold" gutterBottom sx={{ color: '#2e7d32', display: 'flex', alignItems: 'center', gap: 1 }}>
-                    🎯 Target Scores
-                  </Typography>
-                  <Box sx={{ mb: 2 }}>
-                    <Typography variant="caption" fontWeight="bold" sx={{ color: '#1b5e20', display: 'block', mb: 0.5 }}>SAT Targets:</Typography>
-                    <Box sx={{ display: 'flex', flexDirection: 'column', gap: 0.5 }}>
-                      <Box sx={{ display: 'flex', justifyContent: 'space-between' }}>
-                        <Typography variant="caption" sx={{ color: '#1b5e20' }}>Ivy League:</Typography>
-                        <Typography variant="caption" fontWeight="bold" sx={{ color: '#1b5e20' }}>1500+ SAT</Typography>
-                      </Box>
-                      <Box sx={{ display: 'flex', justifyContent: 'space-between' }}>
-                        <Typography variant="caption" sx={{ color: '#1b5e20' }}>Top 20:</Typography>
-                        <Typography variant="caption" fontWeight="bold" sx={{ color: '#1b5e20' }}>1400+ SAT</Typography>
-                      </Box>
-                      <Box sx={{ display: 'flex', justifyContent: 'space-between' }}>
-                        <Typography variant="caption" sx={{ color: '#1b5e20' }}>State Schools:</Typography>
-                        <Typography variant="caption" fontWeight="bold" sx={{ color: '#1b5e20' }}>1200+ SAT</Typography>
-                      </Box>
+                      <Typography variant="caption">State Schools:</Typography>
+                      <Typography variant="caption" fontWeight="600">1200+</Typography>
                     </Box>
                   </Box>
-                  <Box>
-                    <Typography variant="caption" fontWeight="bold" sx={{ color: '#1b5e20', display: 'block', mb: 0.5 }}>AP Credit:</Typography>
-                    <Box sx={{ display: 'flex', flexDirection: 'column', gap: 0.5 }}>
-                      <Box sx={{ display: 'flex', justifyContent: 'space-between' }}>
-                        <Typography variant="caption" sx={{ color: '#1b5e20' }}>Most Colleges:</Typography>
-                        <Typography variant="caption" fontWeight="bold" sx={{ color: '#1b5e20' }}>Score 3+</Typography>
-                      </Box>
-                      <Box sx={{ display: 'flex', justifyContent: 'space-between' }}>
-                        <Typography variant="caption" sx={{ color: '#1b5e20' }}>Top Colleges:</Typography>
-                        <Typography variant="caption" fontWeight="bold" sx={{ color: '#1b5e20' }}>Score 4-5</Typography>
-                      </Box>
-                    </Box>
-                  </Box>
-                </CardContent>
-              </Card>
+                </Paper>
+              </Box>
 
-              {/* External Links */}
-              <Card sx={{ bgcolor: '#f3e5f5', border: '1px solid #9c27b0', borderRadius: 2, mb: 2 }}>
-                <CardContent sx={{ p: 2 }}>
-                  <Typography variant="subtitle2" fontWeight="bold" gutterBottom sx={{ color: '#7b1fa2', display: 'flex', alignItems: 'center', gap: 1 }}>
-                    🔗 Official Resources
-                  </Typography>
-                  <Box sx={{ display: 'flex', flexDirection: 'column', gap: 1 }}>
-                    <Typography variant="caption" fontWeight="bold" sx={{ color: '#6a1b9a', mb: 0.5 }}>SAT/ACT:</Typography>
-                    <Button
-                      variant="text"
-                      size="small"
-                      href="https://collegereadiness.collegeboard.org/sat"
-                      target="_blank"
-                      sx={{ justifyContent: 'flex-start', textTransform: 'none', color: '#7b1fa2', fontSize: '0.75rem' }}
-                    >
-                      College Board SAT
-                    </Button>
-                    <Button
-                      variant="text"
-                      size="small"
-                      href="https://www.khanacademy.org/test-prep/sat"
-                      target="_blank"
-                      sx={{ justifyContent: 'flex-start', textTransform: 'none', color: '#7b1fa2', fontSize: '0.75rem' }}
-                    >
-                      Khan Academy SAT
-                    </Button>
-                    <Button
-                      variant="text"
-                      size="small"
-                      href="https://www.act.org"
-                      target="_blank"
-                      sx={{ justifyContent: 'flex-start', textTransform: 'none', color: '#7b1fa2', fontSize: '0.75rem' }}
-                    >
-                      ACT Official
-                    </Button>
-                    <Typography variant="caption" fontWeight="bold" sx={{ color: '#6a1b9a', mt: 1, mb: 0.5 }}>College Search:</Typography>
-                    <Button
-                      variant="text"
-                      size="small"
-                      href="https://bigfuture.collegeboard.org"
-                      target="_blank"
-                      sx={{ justifyContent: 'flex-start', textTransform: 'none', color: '#7b1fa2', fontSize: '0.75rem' }}
-                    >
-                      BigFuture College Search
-                    </Button>
-                    <Button
-                      variant="text"
-                      size="small"
-                      href="https://www.commonapp.org"
-                      target="_blank"
-                      sx={{ justifyContent: 'flex-start', textTransform: 'none', color: '#7b1fa2', fontSize: '0.75rem' }}
-                    >
-                      Common Application
-                    </Button>
-                  </Box>
-                </CardContent>
-              </Card>
+              <Divider sx={{ my: 2 }} />
 
-              {/* Footer */}
-              <Paper sx={{ p: 2, bgcolor: '#e8f4fd', borderRadius: 2, textAlign: 'center' }}>
-                <Typography variant="caption" color="text.secondary">
-                  SAT/ACT Excellence Center © 2024
+              {/* Official Links */}
+              <Box>
+                <Typography variant="subtitle2" fontWeight="600" sx={{ mb: 1.5, color: 'text.secondary' }}>
+                  Official Resources
                 </Typography>
-              </Paper>
+                <Box sx={{ display: 'flex', flexDirection: 'column', gap: 0.5 }}>
+                  <Button
+                    variant="text"
+                    size="small"
+                    href="https://collegereadiness.collegeboard.org/sat"
+                    target="_blank"
+                    sx={{ justifyContent: 'flex-start', textTransform: 'none', fontSize: '0.75rem', px: 1 }}
+                  >
+                    College Board SAT
+                  </Button>
+                  <Button
+                    variant="text"
+                    size="small"
+                    href="https://www.act.org"
+                    target="_blank"
+                    sx={{ justifyContent: 'flex-start', textTransform: 'none', fontSize: '0.75rem', px: 1 }}
+                  >
+                    ACT Official
+                  </Button>
+                  <Button
+                    variant="text"
+                    size="small"
+                    href="https://apcentral.collegeboard.org"
+                    target="_blank"
+                    sx={{ justifyContent: 'flex-start', textTransform: 'none', fontSize: '0.75rem', px: 1 }}
+                  >
+                    AP Central
+                  </Button>
+                  <Button
+                    variant="text"
+                    size="small"
+                    href="https://www.khanacademy.org/test-prep"
+                    target="_blank"
+                    sx={{ justifyContent: 'flex-start', textTransform: 'none', fontSize: '0.75rem', px: 1 }}
+                  >
+                    Khan Academy
+                  </Button>
+                </Box>
+              </Box>
             </Box>
           </Drawer>
 
