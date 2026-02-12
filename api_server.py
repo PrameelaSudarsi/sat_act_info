@@ -221,8 +221,41 @@ async def change_model(request: ModelChangeRequest):
         raise HTTPException(status_code=500, detail=str(e))
 
 
+
+# Import the new generator
+from gemini_generator import GeminiSATGenerator
+
+# Initialize the generator
+gemini_generator = GeminiSATGenerator()
+
+@app.post("/api/generate-test")
+async def generate_test(request: dict):
+    """Generate a dynamic practice test using Gemini."""
+    try:
+        test_type = request.get("testId", "sat-math")
+        count = request.get("questionCount", 5)
+        
+        # Call the generator
+        questions = await gemini_generator.generate_questions(test_type, count)
+        
+        return {
+            "success": True,
+            "test_type": test_type,
+            "count": len(questions),
+            "questions": questions
+        }
+    except Exception as e:
+        print(f"Error generating test: {e}")
+        # Return fallback error structure
+        return {
+            "success": False,
+            "error": str(e),
+            "questions": [] 
+        }
+
 if __name__ == "__main__":
     port = int(os.getenv("API_SERVER_PORT", "8001"))
+    print(f"🚀 Starting API Server on port {port}...")
     uvicorn.run(
         "api_server:app",
         host="0.0.0.0",
