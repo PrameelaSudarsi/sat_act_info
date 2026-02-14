@@ -315,50 +315,129 @@ function App() {
 
               <Divider sx={{ my: 2 }} />
 
-              {/* Quick Info */}
+              {/* Test Format Overview */}
               <Box sx={{ mb: 3 }}>
                 <Typography variant="subtitle2" fontWeight="600" sx={{ mb: 1.5, color: 'text.secondary', textTransform: 'uppercase', fontSize: '0.75rem', letterSpacing: '0.5px' }}>
-                  Quick Reference
+                  Test Format
                 </Typography>
-                <Paper sx={{ p: 2, bgcolor: '#f5f5f5', borderRadius: 2 }}>
-                  <Box sx={{ display: 'flex', flexDirection: 'column', gap: 1 }}>
+                <Paper sx={{ p: 2, bgcolor: '#f8fafc', borderRadius: 2, border: '1px solid', borderColor: 'divider' }}>
+                  <Typography variant="caption" fontWeight="600" display="block" sx={{ mb: 1, color: 'primary.main' }}>Digital SAT (2026)</Typography>
+                  <Box sx={{ display: 'flex', flexDirection: 'column', gap: 0.5 }}>
                     <Box sx={{ display: 'flex', justifyContent: 'space-between' }}>
-                      <Typography variant="caption">SAT Math:</Typography>
-                      <Typography variant="caption" fontWeight="600">44Q / 70min</Typography>
+                      <Typography variant="caption">Math:</Typography>
+                      <Typography variant="caption" fontWeight="600">44Q • 70min • 2 modules</Typography>
                     </Box>
                     <Box sx={{ display: 'flex', justifyContent: 'space-between' }}>
-                      <Typography variant="caption">SAT English:</Typography>
-                      <Typography variant="caption" fontWeight="600">54Q / 64min</Typography>
+                      <Typography variant="caption">English:</Typography>
+                      <Typography variant="caption" fontWeight="600">54Q • 64min • 2 modules</Typography>
                     </Box>
                     <Box sx={{ display: 'flex', justifyContent: 'space-between' }}>
-                      <Typography variant="caption">ACT Math:</Typography>
-                      <Typography variant="caption" fontWeight="600">60Q / 60min</Typography>
+                      <Typography variant="caption">Total:</Typography>
+                      <Typography variant="caption" fontWeight="600">2hr 14min</Typography>
+                    </Box>
+                    <Box sx={{ display: 'flex', justifyContent: 'space-between' }}>
+                      <Typography variant="caption">Score:</Typography>
+                      <Typography variant="caption" fontWeight="600">400-1600</Typography>
+                    </Box>
+                  </Box>
+                </Paper>
+
+                <Paper sx={{ p: 2, mt: 1.5, bgcolor: '#f8fafc', borderRadius: 2, border: '1px solid', borderColor: 'divider' }}>
+                  <Typography variant="caption" fontWeight="600" display="block" sx={{ mb: 1, color: 'success.main' }}>ACT (2026)</Typography>
+                  <Box sx={{ display: 'flex', flexDirection: 'column', gap: 0.5 }}>
+                    <Box sx={{ display: 'flex', justifyContent: 'space-between' }}>
+                      <Typography variant="caption">English:</Typography>
+                      <Typography variant="caption" fontWeight="600">75Q • 45min</Typography>
+                    </Box>
+                    <Box sx={{ display: 'flex', justifyContent: 'space-between' }}>
+                      <Typography variant="caption">Math:</Typography>
+                      <Typography variant="caption" fontWeight="600">60Q • 60min</Typography>
+                    </Box>
+                    <Box sx={{ display: 'flex', justifyContent: 'space-between' }}>
+                      <Typography variant="caption">Reading:</Typography>
+                      <Typography variant="caption" fontWeight="600">40Q • 35min</Typography>
+                    </Box>
+                    <Box sx={{ display: 'flex', justifyContent: 'space-between' }}>
+                      <Typography variant="caption">Science:</Typography>
+                      <Typography variant="caption" fontWeight="600">40Q • 35min</Typography>
+                    </Box>
+                    <Box sx={{ display: 'flex', justifyContent: 'space-between' }}>
+                      <Typography variant="caption">Total:</Typography>
+                      <Typography variant="caption" fontWeight="600">2hr 55min</Typography>
+                    </Box>
+                    <Box sx={{ display: 'flex', justifyContent: 'space-between' }}>
+                      <Typography variant="caption">Score:</Typography>
+                      <Typography variant="caption" fontWeight="600">1-36 (composite)</Typography>
                     </Box>
                   </Box>
                 </Paper>
               </Box>
 
-              {/* Target Scores */}
+              {/* Score Benchmarks */}
               <Box sx={{ mb: 3 }}>
                 <Typography variant="subtitle2" fontWeight="600" sx={{ mb: 1.5, color: 'text.secondary', textTransform: 'uppercase', fontSize: '0.75rem', letterSpacing: '0.5px' }}>
-                  Target Scores
+                  Score Benchmarks
                 </Typography>
-                <Paper sx={{ p: 2, bgcolor: '#e8f5e9', borderRadius: 2 }}>
-                  <Typography variant="caption" fontWeight="600" sx={{ display: 'block', mb: 1 }}>SAT Benchmarks</Typography>
-                  <Box sx={{ display: 'flex', flexDirection: 'column', gap: 0.5 }}>
-                    <Box sx={{ display: 'flex', justifyContent: 'space-between' }}>
-                      <Typography variant="caption">Ivy League:</Typography>
-                      <Typography variant="caption" fontWeight="600">1500+</Typography>
+                <Paper sx={{ p: 2, bgcolor: '#f8fafc', borderRadius: 2, border: '1px solid', borderColor: 'divider' }}>
+                  <Typography variant="caption" fontWeight="600" display="block" sx={{ mb: 1, color: 'primary.main' }}>SAT Score Ranges</Typography>
+                  <Box sx={{ display: 'flex', flexDirection: 'column', gap: 0.75 }}>
+                    <Box>
+                      <Box sx={{ display: 'flex', justifyContent: 'space-between', mb: 0.25 }}>
+                        <Typography variant="caption" fontWeight="600">Ivy League / Top 10</Typography>
+                        <Typography variant="caption" fontWeight="600" color="success.main">1500-1600</Typography>
+                      </Box>
+                      <Typography variant="caption" color="text.secondary" sx={{ fontSize: '0.7rem' }}>Harvard, MIT, Stanford, Yale</Typography>
                     </Box>
-                    <Box sx={{ display: 'flex', justifyContent: 'space-between' }}>
-                      <Typography variant="caption">Top 20:</Typography>
-                      <Typography variant="caption" fontWeight="600">1400+</Typography>
+                    <Divider sx={{ my: 0.5 }} />
+                    <Box>
+                      <Box sx={{ display: 'flex', justifyContent: 'space-between', mb: 0.25 }}>
+                        <Typography variant="caption" fontWeight="600">Top 20 Universities</Typography>
+                        <Typography variant="caption" fontWeight="600" color="primary.main">1400-1500</Typography>
+                      </Box>
+                      <Typography variant="caption" color="text.secondary" sx={{ fontSize: '0.7rem' }}>Duke, Northwestern, Cornell</Typography>
                     </Box>
-                    <Box sx={{ display: 'flex', justifyContent: 'space-between' }}>
-                      <Typography variant="caption">State Schools:</Typography>
-                      <Typography variant="caption" fontWeight="600">1200+</Typography>
+                    <Divider sx={{ my: 0.5 }} />
+                    <Box>
+                      <Box sx={{ display: 'flex', justifyContent: 'space-between', mb: 0.25 }}>
+                        <Typography variant="caption" fontWeight="600">Top 50 Universities</Typography>
+                        <Typography variant="caption" fontWeight="600" color="warning.main">1300-1400</Typography>
+                      </Box>
+                      <Typography variant="caption" color="text.secondary" sx={{ fontSize: '0.7rem' }}>Boston U, NYU, Georgia Tech</Typography>
+                    </Box>
+                    <Divider sx={{ my: 0.5 }} />
+                    <Box>
+                      <Box sx={{ display: 'flex', justifyContent: 'space-between', mb: 0.25 }}>
+                        <Typography variant="caption" fontWeight="600">State Flagships</Typography>
+                        <Typography variant="caption" fontWeight="600">1200-1300</Typography>
+                      </Box>
+                      <Typography variant="caption" color="text.secondary" sx={{ fontSize: '0.7rem' }}>UW, UT Austin, UNC</Typography>
                     </Box>
                   </Box>
+                </Paper>
+
+                <Paper sx={{ p: 2, mt: 1.5, bgcolor: '#f8fafc', borderRadius: 2, border: '1px solid', borderColor: 'divider' }}>
+                  <Typography variant="caption" fontWeight="600" display="block" sx={{ mb: 1, color: 'success.main' }}>ACT Score Ranges</Typography>
+                  <Box sx={{ display: 'flex', flexDirection: 'column', gap: 0.75 }}>
+                    <Box sx={{ display: 'flex', justifyContent: 'space-between' }}>
+                      <Typography variant="caption" fontWeight="600">Ivy League / Top 10</Typography>
+                      <Typography variant="caption" fontWeight="600" color="success.main">33-36</Typography>
+                    </Box>
+                    <Box sx={{ display: 'flex', justifyContent: 'space-between' }}>
+                      <Typography variant="caption" fontWeight="600">Top 20 Universities</Typography>
+                      <Typography variant="caption" fontWeight="600" color="primary.main">30-33</Typography>
+                    </Box>
+                    <Box sx={{ display: 'flex', justifyContent: 'space-between' }}>
+                      <Typography variant="caption" fontWeight="600">Top 50 Universities</Typography>
+                      <Typography variant="caption" fontWeight="600" color="warning.main">27-30</Typography>
+                    </Box>
+                    <Box sx={{ display: 'flex', justifyContent: 'space-between' }}>
+                      <Typography variant="caption" fontWeight="600">State Flagships</Typography>
+                      <Typography variant="caption" fontWeight="600">24-27</Typography>
+                    </Box>
+                  </Box>
+                  <Typography variant="caption" display="block" sx={{ mt: 1.5, fontSize: '0.7rem', color: 'text.secondary', fontStyle: 'italic' }}>
+                    SAT-ACT Conversion: SAT 1500 ≈ ACT 34 | SAT 1400 ≈ ACT 31 | SAT 1300 ≈ ACT 28
+                  </Typography>
                 </Paper>
               </Box>
 
