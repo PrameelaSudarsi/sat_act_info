@@ -629,6 +629,7 @@ const MockTestCenter = () => {
   const [testInProgress, setTestInProgress] = useState(false);
   const [timeRemaining, setTimeRemaining] = useState(null);
   const [loadingQuestions, setLoadingQuestions] = useState(false);
+  const [showSubjectTests, setShowSubjectTests] = useState(false);
 
   // Mock test configurations
   const mockTests = [
@@ -1571,9 +1572,20 @@ ${testResults.incorrectQuestions.map((q, i) =>
           ))}
         </Grid>
 
-        <Typography variant="h5" gutterBottom sx={{ fontWeight: 600, mb: 2, color: 'secondary.main' }}>
-          📚 Digital SAT Subject Mastery
-        </Typography>
+        <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', mb: 2 }}>
+          <Typography variant="h5" sx={{ fontWeight: 600, color: 'secondary.main' }}>
+            📚 Digital SAT Subject Mastery
+          </Typography>
+          <Button 
+            size="small" 
+            variant="outlined"
+            onClick={() => setShowSubjectTests(!showSubjectTests)}
+            sx={{ textTransform: 'none' }}
+          >
+            {showSubjectTests ? 'Minimize' : 'Expand'}
+          </Button>
+        </Box>
+        {showSubjectTests && (
         <Grid container spacing={4} sx={{ mb: 4 }}>
           {mockTests.filter(test => test.id.startsWith('sat-') && test.id.split('-').length > 2).map((test) => (
             <Grid item xs={12} md={4} key={test.id}>
@@ -1632,6 +1644,7 @@ ${testResults.incorrectQuestions.map((q, i) =>
             </Grid>
           ))}
         </Grid>
+        )}
 
         <Typography variant="h5" gutterBottom sx={{ fontWeight: 600, mb: 2, color: 'warning.main' }}>
           🎓 AP Exam Practice Tests
