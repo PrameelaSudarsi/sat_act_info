@@ -220,13 +220,6 @@ function App() {
               <Typography variant="body2" sx={{ display: { xs: 'none', sm: 'block' } }}>
                 {user}
               </Typography>
-              <Button 
-                color="inherit" 
-                onClick={() => setChatEnabled(!chatEnabled)}
-                sx={{ border: '1px solid white' }}
-              >
-                {chatEnabled ? 'Disable Chat' : 'Enable Chat'}
-              </Button>
               <IconButton color="inherit" onClick={handleLogout} title="Logout">
                 <LogoutIcon />
               </IconButton>
