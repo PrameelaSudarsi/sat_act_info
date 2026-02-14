@@ -34,10 +34,6 @@ import {
   Logout as LogoutIcon,
 } from '@mui/icons-material';
 import MockTestCenter from './components/MockTestCenter';
-import SATSyllabus from './components/SATSyllabus';
-import ACTSyllabus from './components/ACTSyllabus';
-import StudyGuide from './components/StudyGuide';
-import MockTests from './components/MockTests';
 import CollegeAdmissionGuide from './components/CollegeAdmissionGuide';
 import SAT2026StudyGuide from './components/SAT2026StudyGuide';
 import ChatSession from './components/ChatSession';
@@ -313,13 +309,7 @@ function App() {
                 </Typography>
                 <Box sx={{ display: 'flex', flexDirection: 'column', gap: 1 }}>
                   <SAT2026StudyGuide />
-                  <StudyGuide />
-                  <MockTests />
                   <CollegeAdmissionGuide />
-                  <Box sx={{ display: 'flex', gap: 1 }}>
-                    <SATSyllabus />
-                    <ACTSyllabus />
-                  </Box>
                 </Box>
               </Box>
 
