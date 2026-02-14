@@ -315,6 +315,80 @@ function App() {
 
               <Divider sx={{ my: 2 }} />
 
+              {/* Practice Resources */}
+              <Box sx={{ mb: 3 }}>
+                <Typography variant="subtitle2" fontWeight="600" sx={{ mb: 1.5, color: 'text.secondary', textTransform: 'uppercase', fontSize: '0.75rem', letterSpacing: '0.5px' }}>
+                  Practice Resources
+                </Typography>
+                <Paper sx={{ p: 1.5, bgcolor: '#f8fafc', borderRadius: 2, border: '1px solid', borderColor: 'divider' }}>
+                  <Typography variant="caption" fontWeight="600" display="block" sx={{ mb: 1, color: 'primary.main' }}>Khan Academy (Free)</Typography>
+                  <Box sx={{ display: 'flex', flexDirection: 'column', gap: 0.5 }}>
+                    <Button
+                      variant="text"
+                      size="small"
+                      href="https://www.khanacademy.org/test-prep/sat"
+                      target="_blank"
+                      sx={{ justifyContent: 'flex-start', textTransform: 'none', fontSize: '0.75rem', px: 1, py: 0.5 }}
+                    >
+                      SAT Math Practice
+                    </Button>
+                    <Button
+                      variant="text"
+                      size="small"
+                      href="https://www.khanacademy.org/test-prep/sat/sat-reading-writing-practice"
+                      target="_blank"
+                      sx={{ justifyContent: 'flex-start', textTransform: 'none', fontSize: '0.75rem', px: 1, py: 0.5 }}
+                    >
+                      SAT Reading & Writing
+                    </Button>
+                  </Box>
+                </Paper>
+
+                <Paper sx={{ p: 1.5, mt: 1.5, bgcolor: '#f8fafc', borderRadius: 2, border: '1px solid', borderColor: 'divider' }}>
+                  <Typography variant="caption" fontWeight="600" display="block" sx={{ mb: 1, color: 'success.main' }}>Subject Practice</Typography>
+                  <Box sx={{ display: 'flex', flexDirection: 'column', gap: 0.5 }}>
+                    <Button
+                      variant="text"
+                      size="small"
+                      href="https://www.khanacademy.org/math/algebra"
+                      target="_blank"
+                      sx={{ justifyContent: 'flex-start', textTransform: 'none', fontSize: '0.75rem', px: 1, py: 0.5 }}
+                    >
+                      Algebra
+                    </Button>
+                    <Button
+                      variant="text"
+                      size="small"
+                      href="https://www.khanacademy.org/math/geometry"
+                      target="_blank"
+                      sx={{ justifyContent: 'flex-start', textTransform: 'none', fontSize: '0.75rem', px: 1, py: 0.5 }}
+                    >
+                      Geometry
+                    </Button>
+                    <Button
+                      variant="text"
+                      size="small"
+                      href="https://www.khanacademy.org/math/trigonometry"
+                      target="_blank"
+                      sx={{ justifyContent: 'flex-start', textTransform: 'none', fontSize: '0.75rem', px: 1, py: 0.5 }}
+                    >
+                      Trigonometry
+                    </Button>
+                    <Button
+                      variant="text"
+                      size="small"
+                      href="https://www.khanacademy.org/science"
+                      target="_blank"
+                      sx={{ justifyContent: 'flex-start', textTransform: 'none', fontSize: '0.75rem', px: 1, py: 0.5 }}
+                    >
+                      Science (ACT)
+                    </Button>
+                  </Box>
+                </Paper>
+              </Box>
+
+              <Divider sx={{ my: 2 }} />
+
               {/* Test Format Overview */}
               <Box sx={{ mb: 3 }}>
                 <Typography variant="subtitle2" fontWeight="600" sx={{ mb: 1.5, color: 'text.secondary', textTransform: 'uppercase', fontSize: '0.75rem', letterSpacing: '0.5px' }}>
@@ -443,49 +517,76 @@ function App() {
 
               <Divider sx={{ my: 2 }} />
 
-              {/* Official Links */}
+              {/* Official Resources */}
               <Box>
                 <Typography variant="subtitle2" fontWeight="600" sx={{ mb: 1.5, color: 'text.secondary', textTransform: 'uppercase', fontSize: '0.75rem', letterSpacing: '0.5px' }}>
                   Official Resources
                 </Typography>
-                <Box sx={{ display: 'flex', flexDirection: 'column', gap: 0.5 }}>
-                  <Button
-                    variant="text"
-                    size="small"
-                    href="https://collegereadiness.collegeboard.org/sat"
-                    target="_blank"
-                    sx={{ justifyContent: 'flex-start', textTransform: 'none', fontSize: '0.75rem', px: 1 }}
-                  >
-                    College Board SAT
-                  </Button>
-                  <Button
-                    variant="text"
-                    size="small"
-                    href="https://www.act.org"
-                    target="_blank"
-                    sx={{ justifyContent: 'flex-start', textTransform: 'none', fontSize: '0.75rem', px: 1 }}
-                  >
-                    ACT Official
-                  </Button>
-                  <Button
-                    variant="text"
-                    size="small"
-                    href="https://apcentral.collegeboard.org"
-                    target="_blank"
-                    sx={{ justifyContent: 'flex-start', textTransform: 'none', fontSize: '0.75rem', px: 1 }}
-                  >
-                    AP Central
-                  </Button>
-                  <Button
-                    variant="text"
-                    size="small"
-                    href="https://www.khanacademy.org/test-prep"
-                    target="_blank"
-                    sx={{ justifyContent: 'flex-start', textTransform: 'none', fontSize: '0.75rem', px: 1 }}
-                  >
-                    Khan Academy
-                  </Button>
-                </Box>
+                <Paper sx={{ p: 1.5, bgcolor: '#f8fafc', borderRadius: 2, border: '1px solid', borderColor: 'divider' }}>
+                  <Typography variant="caption" fontWeight="600" display="block" sx={{ mb: 1, color: 'primary.main' }}>Test Prep</Typography>
+                  <Box sx={{ display: 'flex', flexDirection: 'column', gap: 0.5 }}>
+                    <Button
+                      variant="text"
+                      size="small"
+                      href="https://collegereadiness.collegeboard.org/sat"
+                      target="_blank"
+                      sx={{ justifyContent: 'flex-start', textTransform: 'none', fontSize: '0.75rem', px: 1, py: 0.5 }}
+                    >
+                      College Board SAT
+                    </Button>
+                    <Button
+                      variant="text"
+                      size="small"
+                      href="https://www.act.org"
+                      target="_blank"
+                      sx={{ justifyContent: 'flex-start', textTransform: 'none', fontSize: '0.75rem', px: 1, py: 0.5 }}
+                    >
+                      ACT Official
+                    </Button>
+                    <Button
+                      variant="text"
+                      size="small"
+                      href="https://apcentral.collegeboard.org"
+                      target="_blank"
+                      sx={{ justifyContent: 'flex-start', textTransform: 'none', fontSize: '0.75rem', px: 1, py: 0.5 }}
+                    >
+                      AP Central
+                    </Button>
+                  </Box>
+                </Paper>
+
+                <Paper sx={{ p: 1.5, mt: 1.5, bgcolor: '#f8fafc', borderRadius: 2, border: '1px solid', borderColor: 'divider' }}>
+                  <Typography variant="caption" fontWeight="600" display="block" sx={{ mb: 1, color: 'secondary.main' }}>College Search</Typography>
+                  <Box sx={{ display: 'flex', flexDirection: 'column', gap: 0.5 }}>
+                    <Button
+                      variant="text"
+                      size="small"
+                      href="https://bigfuture.collegeboard.org"
+                      target="_blank"
+                      sx={{ justifyContent: 'flex-start', textTransform: 'none', fontSize: '0.75rem', px: 1, py: 0.5 }}
+                    >
+                      BigFuture College Search
+                    </Button>
+                    <Button
+                      variant="text"
+                      size="small"
+                      href="https://www.commonapp.org"
+                      target="_blank"
+                      sx={{ justifyContent: 'flex-start', textTransform: 'none', fontSize: '0.75rem', px: 1, py: 0.5 }}
+                    >
+                      Common Application
+                    </Button>
+                    <Button
+                      variant="text"
+                      size="small"
+                      href="https://www.niche.com/colleges/search/best-colleges/"
+                      target="_blank"
+                      sx={{ justifyContent: 'flex-start', textTransform: 'none', fontSize: '0.75rem', px: 1, py: 0.5 }}
+                    >
+                      Niche College Rankings
+                    </Button>
+                  </Box>
+                </Paper>
               </Box>
             </Box>
           </Drawer>
