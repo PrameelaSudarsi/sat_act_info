@@ -305,6 +305,129 @@ const generateQuestionsWithOllama = async (testId, questionCount = 44) => {
         });
       }
     });
+  } else if (testId === 'act-english') {
+    // ACT English: 75 questions in 45 minutes
+    const topics = [
+      { name: 'Production of Writing', count: 30 },
+      { name: 'Knowledge of Language', count: 16 },
+      { name: 'Conventions of Standard English', count: 29 }
+    ];
+    
+    let qId = 1;
+    topics.forEach(topicGroup => {
+      for (let i = 0; i < topicGroup.count; i++) {
+        let question, correctAnswer, wrongAnswers, explanation;
+        
+        if (topicGroup.name === 'Production of Writing') {
+          const sentences = [
+            'The author wants to add a sentence that introduces the main topic. Which is best?',
+            'Which transition best connects these paragraphs?',
+            'Should the writer add this sentence here?'
+          ];
+          question = sentences[i % sentences.length];
+          correctAnswer = 'Yes, it provides relevant context';
+          wrongAnswers = ['No, it is redundant', 'No, it is off-topic', 'Yes, but in a different location'];
+          explanation = 'Production of Writing focuses on topic development, organization, and effective language use.';
+        } else if (topicGroup.name === 'Knowledge of Language') {
+          question = 'Which word choice is most precise and appropriate?';
+          correctAnswer = 'Demonstrate';
+          wrongAnswers = ['Show', 'Do', 'Make'];
+          explanation = 'Knowledge of Language tests word choice, style, and tone consistency.';
+        } else {
+          question = 'Which choice corrects the grammatical error?\n\n"The students was studying hard."';
+          correctAnswer = 'The students were studying hard.';
+          wrongAnswers = ['NO CHANGE', 'The student was studying hard.', 'The students is studying hard.'];
+          explanation = 'Conventions tests grammar, punctuation, and sentence structure. Plural subjects need plural verbs.';
+        }
+        
+        const allOptions = [correctAnswer, ...wrongAnswers].sort(() => Math.random() - 0.5);
+        const correctIndex = allOptions.indexOf(correctAnswer);
+        
+        questions.push({
+          id: qId++,
+          question,
+          options: allOptions.map((opt, idx) => `${['A', 'B', 'C', 'D'][idx]}) ${opt}`),
+          correct: ['A', 'B', 'C', 'D'][correctIndex],
+          topic: topicGroup.name,
+          difficulty: ['Easy', 'Medium', 'Hard'][i % 3],
+          explanation
+        });
+      }
+    });
+  } else if (testId === 'act-reading') {
+    // ACT Reading: 40 questions in 35 minutes (4 passages, 10 questions each)
+    const passages = [
+      { name: 'Literary Narrative', count: 10 },
+      { name: 'Social Science', count: 10 },
+      { name: 'Humanities', count: 10 },
+      { name: 'Natural Science', count: 10 }
+    ];
+    
+    let qId = 1;
+    passages.forEach(passage => {
+      for (let i = 0; i < passage.count; i++) {
+        const questionTypes = [
+          { q: 'What is the main idea of this passage?', ans: 'The passage explores a central theme', wrong: ['The passage tells a story', 'The passage compares ideas', 'The passage describes a place'] },
+          { q: 'According to the passage, what can be inferred?', ans: 'The author suggests a conclusion', wrong: ['The author states a fact', 'The author asks a question', 'The author provides data'] },
+          { q: 'The word "significant" most nearly means:', ans: 'Important', wrong: ['Large', 'Difficult', 'Unusual'] }
+        ];
+        
+        const selected = questionTypes[i % questionTypes.length];
+        const allOptions = [selected.ans, ...selected.wrong].sort(() => Math.random() - 0.5);
+        const correctIndex = allOptions.indexOf(selected.ans);
+        
+        questions.push({
+          id: qId++,
+          question: selected.q,
+          options: allOptions.map((opt, idx) => `${['A', 'B', 'C', 'D'][idx]}) ${opt}`),
+          correct: ['A', 'B', 'C', 'D'][correctIndex],
+          topic: passage.name,
+          difficulty: ['Easy', 'Medium', 'Hard'][i % 3],
+          explanation: `ACT Reading tests comprehension, inference, and analysis across four passage types.`
+        });
+      }
+    });
+  } else if (testId === 'act-science') {
+    // ACT Science: 40 questions in 35 minutes
+    const topics = [
+      { name: 'Data Representation', count: 15 },
+      { name: 'Research Summaries', count: 18 },
+      { name: 'Conflicting Viewpoints', count: 7 }
+    ];
+    
+    let qId = 1;
+    topics.forEach(topicGroup => {
+      for (let i = 0; i < topicGroup.count; i++) {
+        let question, correctAnswer, wrongAnswers;
+        
+        if (topicGroup.name === 'Data Representation') {
+          question = 'According to the graph, what happens when temperature increases?';
+          correctAnswer = 'The rate increases proportionally';
+          wrongAnswers = ['The rate decreases', 'The rate stays constant', 'The rate fluctuates'];
+        } else if (topicGroup.name === 'Research Summaries') {
+          question = 'What was the purpose of Experiment 2?';
+          correctAnswer = 'To test the effect of variable X on outcome Y';
+          wrongAnswers = ['To confirm Experiment 1', 'To introduce a new method', 'To compare two theories'];
+        } else {
+          question = 'Scientist 1 would most likely agree that:';
+          correctAnswer = 'The hypothesis is supported by the data';
+          wrongAnswers = ['The hypothesis is disproven', 'More research is needed', 'The results are inconclusive'];
+        }
+        
+        const allOptions = [correctAnswer, ...wrongAnswers].sort(() => Math.random() - 0.5);
+        const correctIndex = allOptions.indexOf(correctAnswer);
+        
+        questions.push({
+          id: qId++,
+          question,
+          options: allOptions.map((opt, idx) => `${['A', 'B', 'C', 'D'][idx]}) ${opt}`),
+          correct: ['A', 'B', 'C', 'D'][correctIndex],
+          topic: topicGroup.name,
+          difficulty: ['Easy', 'Medium', 'Hard'][i % 3],
+          explanation: `ACT Science tests interpretation of data, experimental design, and scientific reasoning.`
+        });
+      }
+    });
   } else if (testId === 'sat-math-algebra') {
     // Heart of Algebra focused test
     for (let i = 0; i < questionCount; i++) {
@@ -538,6 +661,36 @@ const MockTestCenter = () => {
       sections: ['Pre-Algebra (14)', 'Elementary Algebra (10)', 'Intermediate Algebra (9)', 'Coordinate Geometry (9)', 'Plane Geometry (14)', 'Trigonometry (4)'],
       color: 'success',
       icon: '🎯'
+    },
+    {
+      id: 'act-english',
+      title: 'ACT English Practice Test',
+      subtitle: 'Official ACT Pattern - 75 Questions',
+      duration: 45,
+      questionCount: 75,
+      sections: ['Production of Writing', 'Knowledge of Language', 'Conventions of Standard English'],
+      color: 'success',
+      icon: '✍️'
+    },
+    {
+      id: 'act-reading',
+      title: 'ACT Reading Practice Test',
+      subtitle: 'Official ACT Pattern - 40 Questions',
+      duration: 35,
+      questionCount: 40,
+      sections: ['Literary Narrative', 'Social Science', 'Humanities', 'Natural Science'],
+      color: 'success',
+      icon: '📖'
+    },
+    {
+      id: 'act-science',
+      title: 'ACT Science Practice Test',
+      subtitle: 'Official ACT Pattern - 40 Questions',
+      duration: 35,
+      questionCount: 40,
+      sections: ['Data Representation', 'Research Summaries', 'Conflicting Viewpoints'],
+      color: 'success',
+      icon: '🔬'
     },
     {
       id: 'ap-calculus',
@@ -1360,58 +1513,57 @@ ${testResults.incorrectQuestions.map((q, i) =>
         <Typography variant="h5" gutterBottom sx={{ fontWeight: 600, mb: 2, color: 'primary.main' }}>
           🏆 Full Length SAT & ACT Tests
         </Typography>
-        <Grid container spacing={4} sx={{ mb: 6 }}>
-          {mockTests.filter(test => test.id === 'sat-math' || test.id === 'sat-english' || test.id === 'act').map((test) => (
-            <Grid item xs={12} md={4} key={test.id}>
+        <Grid container spacing={3} sx={{ mb: 6 }}>
+          {mockTests.filter(test => ['sat-math', 'sat-english', 'act', 'act-english', 'act-reading', 'act-science'].includes(test.id)).map((test) => (
+            <Grid item xs={12} sm={6} md={4} key={test.id}>
               <Card sx={{
                 height: '100%',
-                borderRadius: 4,
-                boxShadow: '0 8px 32px rgba(0,0,0,0.1)',
+                borderRadius: 3,
+                boxShadow: 2,
                 transition: 'all 0.3s ease',
                 '&:hover': {
-                  transform: 'translateY(-8px)',
-                  boxShadow: '0 16px 48px rgba(0,0,0,0.15)'
+                  transform: 'translateY(-4px)',
+                  boxShadow: 4
                 },
                 border: '2px solid',
                 borderColor: `${test.color}.light`
               }}>
-                <CardContent sx={{ p: 4 }}>
-                  <Box sx={{ display: 'flex', alignItems: 'center', mb: 3 }}>
+                <CardContent sx={{ p: 3 }}>
+                  <Box sx={{ display: 'flex', alignItems: 'center', mb: 2 }}>
                     <Avatar sx={{
                       bgcolor: `${test.color}.main`,
-                      width: 56,
-                      height: 56,
+                      width: 48,
+                      height: 48,
                       fontSize: '1.5rem',
                       mr: 2
                     }}>
                       {test.icon}
                     </Avatar>
                     <Box sx={{ flex: 1 }}>
-                      <Typography variant="h6" fontWeight="bold" color={`${test.color}.main`}>
+                      <Typography variant="subtitle1" fontWeight="bold" color={`${test.color}.main`}>
                         {test.title}
                       </Typography>
-                      <Typography variant="body2" color="text.secondary">
+                      <Typography variant="caption" color="text.secondary">
                         {test.subtitle}
                       </Typography>
                     </Box>
                   </Box>
 
-                  <Stack direction="row" spacing={2} sx={{ mb: 3 }}>
-                    <Chip label={`${test.duration} min`} icon={<TimerIcon />} />
-                    <Chip label={`${test.questionCount} questions`} icon={<QuestionIcon />} />
+                  <Stack direction="row" spacing={1} sx={{ mb: 2 }}>
+                    <Chip size="small" label={`${test.duration} min`} icon={<TimerIcon />} />
+                    <Chip size="small" label={`${test.questionCount} Qs`} icon={<QuestionIcon />} />
                   </Stack>
 
                   <Button
                     variant="contained"
                     color={test.color}
                     fullWidth
-                    size="large"
                     onClick={() => startTest(test)}
                     disabled={testInProgress || loadingQuestions}
-                    startIcon={loadingQuestions ? <CircularProgress size={20} /> : <GoogleIcon />}
-                    sx={{ py: 1.5, fontWeight: 'bold', textTransform: 'none' }}
+                    startIcon={loadingQuestions ? <CircularProgress size={16} /> : <PlayIcon />}
+                    sx={{ fontWeight: 'bold' }}
                   >
-                    {loadingQuestions ? 'Generating...' : 'Start Full Test'}
+                    {loadingQuestions ? 'Generating...' : 'Start Test'}
                   </Button>
                 </CardContent>
               </Card>
