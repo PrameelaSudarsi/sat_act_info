@@ -305,26 +305,10 @@ function App() {
             }}
           >
             <Toolbar />
-            <Box sx={{ overflow: 'auto', p: 2.5, bgcolor: '#fafbfc', minHeight: '100vh' }}>
-              {/* Header */}
-              <Paper elevation={0} sx={{ 
-                p: 2.5, 
-                mb: 3, 
-                background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)', 
-                color: 'white', 
-                borderRadius: 2
-              }}>
-                <Typography variant="h6" fontWeight="700" sx={{ letterSpacing: '-0.01em' }}>
-                  🎓 Test Prep Center
-                </Typography>
-                <Typography variant="caption" sx={{ opacity: 0.9 }}>
-                  SAT • ACT • AP Excellence
-                </Typography>
-              </Paper>
-
+            <Box sx={{ overflow: 'auto', p: 2.5, bgcolor: '#ffffff', minHeight: '100vh' }}>
               {/* Study Resources */}
               <Box sx={{ mb: 3 }}>
-                <Typography variant="subtitle2" fontWeight="600" sx={{ mb: 1.5, color: 'text.secondary' }}>
+                <Typography variant="subtitle2" fontWeight="600" sx={{ mb: 1.5, color: 'text.secondary', textTransform: 'uppercase', fontSize: '0.75rem', letterSpacing: '0.5px' }}>
                   Study Materials
                 </Typography>
                 <Box sx={{ display: 'flex', flexDirection: 'column', gap: 1 }}>
@@ -343,7 +327,7 @@ function App() {
 
               {/* Quick Info */}
               <Box sx={{ mb: 3 }}>
-                <Typography variant="subtitle2" fontWeight="600" sx={{ mb: 1.5, color: 'text.secondary' }}>
+                <Typography variant="subtitle2" fontWeight="600" sx={{ mb: 1.5, color: 'text.secondary', textTransform: 'uppercase', fontSize: '0.75rem', letterSpacing: '0.5px' }}>
                   Quick Reference
                 </Typography>
                 <Paper sx={{ p: 2, bgcolor: '#f5f5f5', borderRadius: 2 }}>
@@ -366,7 +350,7 @@ function App() {
 
               {/* Target Scores */}
               <Box sx={{ mb: 3 }}>
-                <Typography variant="subtitle2" fontWeight="600" sx={{ mb: 1.5, color: 'text.secondary' }}>
+                <Typography variant="subtitle2" fontWeight="600" sx={{ mb: 1.5, color: 'text.secondary', textTransform: 'uppercase', fontSize: '0.75rem', letterSpacing: '0.5px' }}>
                   Target Scores
                 </Typography>
                 <Paper sx={{ p: 2, bgcolor: '#e8f5e9', borderRadius: 2 }}>
@@ -392,7 +376,7 @@ function App() {
 
               {/* Official Links */}
               <Box>
-                <Typography variant="subtitle2" fontWeight="600" sx={{ mb: 1.5, color: 'text.secondary' }}>
+                <Typography variant="subtitle2" fontWeight="600" sx={{ mb: 1.5, color: 'text.secondary', textTransform: 'uppercase', fontSize: '0.75rem', letterSpacing: '0.5px' }}>
                   Official Resources
                 </Typography>
                 <Box sx={{ display: 'flex', flexDirection: 'column', gap: 0.5 }}>
