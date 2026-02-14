@@ -31,6 +31,7 @@ import {
   Settings as SettingsIcon,
   CheckCircle as CheckCircleIcon,
   Chat as ChatIcon,
+  Logout as LogoutIcon,
 } from '@mui/icons-material';
 import MockTestCenter from './components/MockTestCenter';
 import SATSyllabus from './components/SATSyllabus';
@@ -40,6 +41,7 @@ import MockTests from './components/MockTests';
 import CollegeAdmissionGuide from './components/CollegeAdmissionGuide';
 import SAT2026StudyGuide from './components/SAT2026StudyGuide';
 import ChatSession from './components/ChatSession';
+import Login from './components/Login';
 import { satApiService } from './services/satApi';
 
 const theme = createTheme({
@@ -112,14 +114,24 @@ function App() {
   const [uploading, setUploading] = useState(false);
   const [uploadSuccess, setUploadSuccess] = useState(false);
   const [chatEnabled, setChatEnabled] = useState(false);
+  const [user, setUser] = useState(null);
 
   useEffect(() => {
-    const timer = setTimeout(() => {
-      checkConnection();
-      loadKBInfo();
-    }, 100);
-    return () => clearTimeout(timer);
+    const savedUser = localStorage.getItem('sat_auth_user');
+    if (savedUser) {
+      setUser(savedUser);
+    }
   }, []);
+
+  useEffect(() => {
+    if (user) {
+      const timer = setTimeout(() => {
+        checkConnection();
+        loadKBInfo();
+      }, 100);
+      return () => clearTimeout(timer);
+    }
+  }, [user]);
 
   const checkConnection = async () => {
     try {
@@ -168,6 +180,24 @@ function App() {
     }
   };
 
+  const handleLogin = (username) => {
+    setUser(username);
+  };
+
+  const handleLogout = () => {
+    localStorage.removeItem('sat_auth_user');
+    setUser(null);
+  };
+
+  if (!user) {
+    return (
+      <ThemeProvider theme={theme}>
+        <CssBaseline />
+        <Login onLogin={handleLogin} />
+      </ThemeProvider>
+    );
+  }
+
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
@@ -187,6 +217,9 @@ function App() {
               SAT Practice Assistant
             </Typography>
             <Box sx={{ display: 'flex', alignItems: 'center', gap: 2 }}>
+              <Typography variant="body2" sx={{ display: { xs: 'none', sm: 'block' } }}>
+                {user}
+              </Typography>
               <Button 
                 color="inherit" 
                 onClick={() => setChatEnabled(!chatEnabled)}
@@ -194,6 +227,9 @@ function App() {
               >
                 {chatEnabled ? 'Disable Chat' : 'Enable Chat'}
               </Button>
+              <IconButton color="inherit" onClick={handleLogout} title="Logout">
+                <LogoutIcon />
+              </IconButton>
               <Chip
                 icon={
                   <CheckCircleIcon
