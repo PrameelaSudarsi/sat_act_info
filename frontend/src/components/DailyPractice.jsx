@@ -19,28 +19,28 @@ const DailyPractice = () => {
   const weeklySchedule = [
     {
       day: 'Monday',
-      morning: { subject: 'SAT Math - Algebra', duration: '45 min', topics: 'Linear equations, Systems, Slopes', link: 'https://www.khanacademy.org/math/algebra' },
-      evening: { subject: 'SAT English - Reading', duration: '45 min', topics: 'Main ideas, Evidence, Inferences', link: 'https://www.khanacademy.org/test-prep/sat/sat-reading-writing-practice' }
+      morning: { subject: 'SAT Math - Algebra', duration: '45 min', topics: 'Linear equations, Systems, Slopes', link: 'https://www.khanacademy.org/test-prep/sat/x0a8c2e5f:untitled-652' },
+      evening: { subject: 'SAT English - Reading', duration: '45 min', topics: 'Main ideas, Evidence, Inferences', link: 'https://www.khanacademy.org/test-prep/sat/x0a8c2e5f:reading-and-writing' }
     },
     {
       day: 'Tuesday',
-      morning: { subject: 'SAT Math - Advanced Math', duration: '45 min', topics: 'Quadratics, Exponentials, Functions', link: 'https://www.khanacademy.org/math/algebra2' },
-      evening: { subject: 'SAT English - Grammar', duration: '45 min', topics: 'Punctuation, Verbs, Sentence structure', link: 'https://www.khanacademy.org/test-prep/sat/sat-reading-writing-practice' }
+      morning: { subject: 'SAT Math - Advanced Math', duration: '45 min', topics: 'Quadratics, Exponentials, Functions', link: 'https://www.khanacademy.org/test-prep/sat/x0a8c2e5f:passport-to-advanced-math' },
+      evening: { subject: 'SAT English - Grammar', duration: '45 min', topics: 'Punctuation, Verbs, Sentence structure', link: 'https://www.khanacademy.org/test-prep/sat/x0a8c2e5f:standard-english-conventions' }
     },
     {
       day: 'Wednesday',
-      morning: { subject: 'ACT Math - Pre-Algebra', duration: '45 min', topics: 'Ratios, Percentages, Fractions', link: 'https://www.khanacademy.org/math/pre-algebra' },
-      evening: { subject: 'ACT English', duration: '45 min', topics: 'Grammar, Punctuation, Style', link: 'https://www.khanacademy.org/humanities/grammar' }
+      morning: { subject: 'ACT Math - Pre-Algebra', duration: '45 min', topics: 'Ratios, Percentages, Fractions', link: 'https://www.khanacademy.org/math/cc-sixth-grade-math' },
+      evening: { subject: 'ACT English', duration: '45 min', topics: 'Grammar, Punctuation, Style', link: 'https://www.khanacademy.org/ela/cc-9th-grade-reading-vocab' }
     },
     {
       day: 'Thursday',
-      morning: { subject: 'SAT Math - Problem Solving', duration: '45 min', topics: 'Statistics, Probability, Data analysis', link: 'https://www.khanacademy.org/math/statistics-probability' },
-      evening: { subject: 'ACT Reading', duration: '45 min', topics: 'Comprehension, Literary analysis', link: 'https://www.khanacademy.org/humanities/reading-comprehension' }
+      morning: { subject: 'SAT Math - Problem Solving', duration: '45 min', topics: 'Statistics, Probability, Data analysis', link: 'https://www.khanacademy.org/test-prep/sat/x0a8c2e5f:problem-solving-and-data-analysis' },
+      evening: { subject: 'ACT Reading', duration: '45 min', topics: 'Comprehension, Literary analysis', link: 'https://www.khanacademy.org/ela/cc-10th-grade-reading-vocab' }
     },
     {
       day: 'Friday',
-      morning: { subject: 'SAT Math - Geometry & Trig', duration: '45 min', topics: 'Area, Volume, Trigonometry', link: 'https://www.khanacademy.org/math/geometry' },
-      evening: { subject: 'ACT Science', duration: '45 min', topics: 'Data interpretation, Experiments', link: 'https://www.khanacademy.org/science' }
+      morning: { subject: 'SAT Math - Geometry & Trig', duration: '45 min', topics: 'Area, Volume, Trigonometry', link: 'https://www.khanacademy.org/math/geometry-home' },
+      evening: { subject: 'ACT Science', duration: '45 min', topics: 'Data interpretation, Experiments', link: 'https://www.khanacademy.org/science/high-school-biology' }
     }
   ];
 
