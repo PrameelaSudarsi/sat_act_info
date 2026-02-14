@@ -41,6 +41,7 @@ const SAT2026StudyGuide = () => {
           <Tab label="SAT English" />
           <Tab label="ACT Math" />
           <Tab label="ACT English" />
+          <Tab label="ACT Science" />
           <Tab label="Test Strategy" />
         </Tabs>
 
@@ -473,8 +474,184 @@ const SAT2026StudyGuide = () => {
             </Box>
           )}
 
-          {/* TEST STRATEGY TAB */}
+          {/* ACT SCIENCE TAB */}
           {tabValue === 4 && (
+            <Box>
+              <Alert severity="success" sx={{ mb: 3 }}>
+                <Typography variant="subtitle2" fontWeight="bold">🔬 ACT Science: 40 Questions | 35 Minutes | 6-7 Passages</Typography>
+                <Typography variant="body2">Tests scientific reasoning and interpretation skills, NOT memorization of science facts.</Typography>
+              </Alert>
+
+              <Typography variant="h5" fontWeight="bold" gutterBottom>Content Format</Typography>
+
+              <Paper sx={{ p: 3, mb: 3, bgcolor: '#e3f2fd' }}>
+                <Typography variant="h6" fontWeight="bold" color="primary">1. Data Representation (30-40% | 15 Questions | 3 Passages)</Typography>
+                <Divider sx={{ my: 2 }} />
+                <Typography variant="subtitle2" fontWeight="bold" gutterBottom>What to Expect:</Typography>
+                <Typography variant="body2" component="div" sx={{ mb: 2 }}>
+                  • Graphs, tables, charts, and diagrams<br/>
+                  • 5 questions per passage<br/>
+                  • Interpret trends, patterns, and relationships in data<br/>
+                  • Read values from graphs and tables
+                </Typography>
+                
+                <Typography variant="subtitle2" fontWeight="bold" gutterBottom>Key Skills:</Typography>
+                <Typography variant="body2" component="div" sx={{ mb: 2 }}>
+                  • <strong>Read Graphs:</strong> Identify x-axis, y-axis, units, and scale<br/>
+                  • <strong>Identify Trends:</strong> Increasing, decreasing, constant, or cyclical patterns<br/>
+                  • <strong>Compare Data:</strong> Which variable is higher/lower at a given point?<br/>
+                  • <strong>Interpolate/Extrapolate:</strong> Estimate values between or beyond data points<br/>
+                  • <strong>Understand Relationships:</strong> Direct (both increase) vs. inverse (one increases, other decreases)
+                </Typography>
+                
+                <Typography variant="subtitle2" fontWeight="bold" gutterBottom>Common Graph Types:</Typography>
+                <Typography variant="body2" component="div">
+                  • Line graphs (show change over time)<br/>
+                  • Bar graphs (compare categories)<br/>
+                  • Scatter plots (show correlation)<br/>
+                  • Tables (organize numerical data)<br/>
+                  • Diagrams (illustrate scientific concepts)
+                </Typography>
+              </Paper>
+
+              <Paper sx={{ p: 3, mb: 3, bgcolor: '#f3e5f5' }}>
+                <Typography variant="h6" fontWeight="bold" color="secondary">2. Research Summaries (45-55% | 18 Questions | 3 Passages)</Typography>
+                <Divider sx={{ my: 2 }} />
+                <Typography variant="subtitle2" fontWeight="bold" gutterBottom>What to Expect:</Typography>
+                <Typography variant="body2" component="div" sx={{ mb: 2 }}>
+                  • Descriptions of 2-3 related experiments<br/>
+                  • 6 questions per passage<br/>
+                  • Understand experimental design and methodology<br/>
+                  • Analyze results and draw conclusions
+                </Typography>
+                
+                <Typography variant="subtitle2" fontWeight="bold" gutterBottom>Key Skills:</Typography>
+                <Typography variant="body2" component="div" sx={{ mb: 2 }}>
+                  • <strong>Identify Variables:</strong> Independent (what's changed), Dependent (what's measured), Control (what's kept constant)<br/>
+                  • <strong>Understand Purpose:</strong> What is the experiment testing?<br/>
+                  • <strong>Compare Experiments:</strong> How do Experiment 1 and 2 differ?<br/>
+                  • <strong>Predict Outcomes:</strong> What would happen if we changed X?<br/>
+                  • <strong>Evaluate Design:</strong> Is the experiment well-designed? What could improve it?
+                </Typography>
+                
+                <Typography variant="subtitle2" fontWeight="bold" gutterBottom>Scientific Method Review:</Typography>
+                <Typography variant="body2" component="div">
+                  1. <strong>Question:</strong> What are we investigating?<br/>
+                  2. <strong>Hypothesis:</strong> Predicted outcome<br/>
+                  3. <strong>Experiment:</strong> Test with controlled variables<br/>
+                  4. <strong>Data Collection:</strong> Measure and record results<br/>
+                  5. <strong>Analysis:</strong> Interpret data and draw conclusions<br/>
+                  6. <strong>Conclusion:</strong> Does data support hypothesis?
+                </Typography>
+              </Paper>
+
+              <Paper sx={{ p: 3, mb: 3, bgcolor: '#e8f5e9' }}>
+                <Typography variant="h6" fontWeight="bold" color="success.main">3. Conflicting Viewpoints (15-20% | 7 Questions | 1 Passage)</Typography>
+                <Divider sx={{ my: 2 }} />
+                <Typography variant="subtitle2" fontWeight="bold" gutterBottom>What to Expect:</Typography>
+                <Typography variant="body2" component="div" sx={{ mb: 2 }}>
+                  • 2-3 scientists/students present different hypotheses or theories<br/>
+                  • 7 questions on one passage<br/>
+                  • Compare and contrast different viewpoints<br/>
+                  • Evaluate evidence supporting each perspective
+                </Typography>
+                
+                <Typography variant="subtitle2" fontWeight="bold" gutterBottom>Key Skills:</Typography>
+                <Typography variant="body2" component="div" sx={{ mb: 2 }}>
+                  • <strong>Identify Main Claims:</strong> What does each scientist believe?<br/>
+                  • <strong>Find Agreements:</strong> What do they agree on?<br/>
+                  • <strong>Find Disagreements:</strong> Where do they differ?<br/>
+                  • <strong>Evaluate Evidence:</strong> Which data supports which viewpoint?<br/>
+                  • <strong>Predict Responses:</strong> How would Scientist 1 respond to Scientist 2's claim?<br/>
+                  • <strong>Assess Strength:</strong> Which argument is stronger based on evidence?
+                </Typography>
+                
+                <Typography variant="subtitle2" fontWeight="bold" gutterBottom>Strategy Tips:</Typography>
+                <Typography variant="body2" component="div">
+                  • Create a comparison table while reading<br/>
+                  • Underline key differences between viewpoints<br/>
+                  • Note which evidence supports which scientist<br/>
+                  • Don't let your own knowledge bias your answers
+                </Typography>
+              </Paper>
+
+              <Paper sx={{ p: 3, mb: 3, bgcolor: '#fff3e0' }}>
+                <Typography variant="h6" fontWeight="bold" color="warning.main" gutterBottom>Science Content Areas (Background Knowledge)</Typography>
+                <Divider sx={{ my: 2 }} />
+                <Alert severity="info" sx={{ mb: 2 }}>
+                  <Typography variant="body2">While ACT Science doesn't require memorization, familiarity with these topics helps with faster comprehension.</Typography>
+                </Alert>
+                
+                <Typography variant="subtitle2" fontWeight="bold" gutterBottom>Biology:</Typography>
+                <Typography variant="body2" component="div" sx={{ mb: 2 }}>
+                  • Cell structure and function<br/>
+                  • Genetics and heredity<br/>
+                  • Evolution and natural selection<br/>
+                  • Ecology and ecosystems<br/>
+                  • Photosynthesis and cellular respiration
+                </Typography>
+                
+                <Typography variant="subtitle2" fontWeight="bold" gutterBottom>Chemistry:</Typography>
+                <Typography variant="body2" component="div" sx={{ mb: 2 }}>
+                  • Atomic structure and periodic table<br/>
+                  • Chemical reactions and equations<br/>
+                  • Acids and bases (pH scale)<br/>
+                  • States of matter<br/>
+                  • Solutions and concentration
+                </Typography>
+                
+                <Typography variant="subtitle2" fontWeight="bold" gutterBottom>Physics:</Typography>
+                <Typography variant="body2" component="div" sx={{ mb: 2 }}>
+                  • Motion and forces (Newton's Laws)<br/>
+                  • Energy (kinetic, potential)<br/>
+                  • Waves and sound<br/>
+                  • Electricity and magnetism<br/>
+                  • Light and optics
+                </Typography>
+                
+                <Typography variant="subtitle2" fontWeight="bold" gutterBottom>Earth Science:</Typography>
+                <Typography variant="body2" component="div">
+                  • Weather and climate<br/>
+                  • Geology and rock cycle<br/>
+                  • Water cycle<br/>
+                  • Astronomy (solar system, stars)<br/>
+                  • Plate tectonics
+                </Typography>
+              </Paper>
+
+              <Paper sx={{ p: 3, bgcolor: '#fce4ec' }}>
+                <Typography variant="h6" fontWeight="bold" sx={{ color: '#c2185b' }} gutterBottom>ACT Science Test-Taking Strategy</Typography>
+                <Divider sx={{ my: 2 }} />
+                <Typography variant="subtitle2" fontWeight="bold" gutterBottom>Time Management (5 minutes per passage):</Typography>
+                <Typography variant="body2" component="div" sx={{ mb: 2 }}>
+                  • <strong>Skim First (30 seconds):</strong> Identify passage type and main topic<br/>
+                  • <strong>Go to Questions (3 minutes):</strong> Read question, then find answer in passage<br/>
+                  • <strong>Don't Read Everything:</strong> Only read what you need to answer questions<br/>
+                  • <strong>Save Conflicting Viewpoints for Last:</strong> It requires more reading time
+                </Typography>
+                
+                <Typography variant="subtitle2" fontWeight="bold" gutterBottom>Question Approach:</Typography>
+                <Typography variant="body2" component="div" sx={{ mb: 2 }}>
+                  • <strong>Underline Key Words:</strong> "increase," "decrease," "according to Experiment 2"<br/>
+                  • <strong>Use Process of Elimination:</strong> Cross out obviously wrong answers<br/>
+                  • <strong>Look for Exact Matches:</strong> Answer is usually directly stated in passage<br/>
+                  • <strong>Check Units:</strong> Make sure answer has correct units (meters, seconds, etc.)
+                </Typography>
+                
+                <Typography variant="subtitle2" fontWeight="bold" gutterBottom>Common Mistakes to Avoid:</Typography>
+                <Typography variant="body2" component="div">
+                  • Don't use outside knowledge - stick to the passage<br/>
+                  • Don't spend too long on one question<br/>
+                  • Don't confuse correlation with causation<br/>
+                  • Don't misread graph axes or units<br/>
+                  • Don't skip the question stem - it has critical info
+                </Typography>
+              </Paper>
+            </Box>
+          )}
+
+          {/* TEST STRATEGY TAB */}
+          {tabValue === 5 && (
             <Box>
               <Typography variant="h5" fontWeight="bold" gutterBottom>Test-Taking Strategies</Typography>
 
