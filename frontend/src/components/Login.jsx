@@ -13,10 +13,12 @@ import { Visibility, VisibilityOff, School } from '@mui/icons-material';
 
 // Hardcoded users - In production, use backend authentication
 const VALID_USERS = [
-  { username: 'admin', password: 'admin123' },
+  { username: 'admin', password: 'Cloud@2026#' },
   { username: 'student', password: 'student123' },
   { username: 'teacher', password: 'teacher123' },
 ];
+
+const MAX_SESSIONS = 2;
 
 const Login = ({ onLogin }) => {
   const [username, setUsername] = useState('');
@@ -24,19 +26,46 @@ const Login = ({ onLogin }) => {
   const [showPassword, setShowPassword] = useState(false);
   const [error, setError] = useState('');
 
+  const checkActiveSessions = (username) => {
+    const sessions = JSON.parse(localStorage.getItem('sat_active_sessions') || '{}');
+    const userSessions = sessions[username] || [];
+    const now = Date.now();
+    const activeSessions = userSessions.filter(s => now - s < 24 * 60 * 60 * 1000);
+    return activeSessions.length;
+  };
+
+  const addSession = (username) => {
+    const sessions = JSON.parse(localStorage.getItem('sat_active_sessions') || '{}');
+    if (!sessions[username]) sessions[username] = [];
+    sessions[username].push(Date.now());
+    localStorage.setItem('sat_active_sessions', JSON.stringify(sessions));
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
     setError('');
+
+    if (!username.trim() || !password.trim()) {
+      setError('Please enter both username and password.');
+      return;
+    }
 
     const user = VALID_USERS.find(
       (u) => u.username === username && u.password === password
     );
 
     if (user) {
+      const activeSessions = checkActiveSessions(username);
+      if (activeSessions >= MAX_SESSIONS) {
+        setError('Maximum login limit reached. This account is already active on multiple devices. Please logout from other sessions or contact administrator.');
+        return;
+      }
+      addSession(username);
       localStorage.setItem('sat_auth_user', username);
       onLogin(username);
     } else {
-      setError('Invalid username or password');
+      setError('Authentication failed. Please verify your credentials and try again.');
+      setPassword('');
     }
   };
 
@@ -111,26 +140,11 @@ const Login = ({ onLogin }) => {
             fullWidth
             variant="contained"
             size="large"
-            sx={{ mt: 3, mb: 2, py: 1.5 }}
+            sx={{ mt: 3 }}
           >
             Sign In
           </Button>
         </form>
-
-        <Box sx={{ mt: 3, p: 2, bgcolor: '#f5f5f5', borderRadius: 2 }}>
-          <Typography variant="caption" color="text.secondary" display="block" gutterBottom>
-            Demo Credentials:
-          </Typography>
-          <Typography variant="caption" display="block">
-            • admin / admin123
-          </Typography>
-          <Typography variant="caption" display="block">
-            • student / student123
-          </Typography>
-          <Typography variant="caption" display="block">
-            • teacher / teacher123
-          </Typography>
-        </Box>
       </Paper>
     </Box>
   );
