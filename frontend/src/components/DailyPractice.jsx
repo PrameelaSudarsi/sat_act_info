@@ -19,28 +19,28 @@ const DailyPractice = () => {
   const weeklySchedule = [
     {
       day: 'Monday',
-      morning: { subject: 'SAT Math - Algebra', duration: '45 min', topics: 'Linear equations, Systems, Slopes' },
-      evening: { subject: 'SAT English - Reading', duration: '45 min', topics: 'Main ideas, Evidence, Inferences' }
+      morning: { subject: 'SAT Math - Algebra', duration: '45 min', topics: 'Linear equations, Systems, Slopes', link: 'https://www.khanacademy.org/math/algebra' },
+      evening: { subject: 'SAT English - Reading', duration: '45 min', topics: 'Main ideas, Evidence, Inferences', link: 'https://www.khanacademy.org/test-prep/sat/sat-reading-writing-practice' }
     },
     {
       day: 'Tuesday',
-      morning: { subject: 'SAT Math - Advanced Math', duration: '45 min', topics: 'Quadratics, Exponentials, Functions' },
-      evening: { subject: 'SAT English - Grammar', duration: '45 min', topics: 'Punctuation, Verbs, Sentence structure' }
+      morning: { subject: 'SAT Math - Advanced Math', duration: '45 min', topics: 'Quadratics, Exponentials, Functions', link: 'https://www.khanacademy.org/math/algebra2' },
+      evening: { subject: 'SAT English - Grammar', duration: '45 min', topics: 'Punctuation, Verbs, Sentence structure', link: 'https://www.khanacademy.org/test-prep/sat/sat-reading-writing-practice' }
     },
     {
       day: 'Wednesday',
-      morning: { subject: 'ACT Math - Pre-Algebra', duration: '45 min', topics: 'Ratios, Percentages, Fractions' },
-      evening: { subject: 'ACT English', duration: '45 min', topics: 'Grammar, Punctuation, Style' }
+      morning: { subject: 'ACT Math - Pre-Algebra', duration: '45 min', topics: 'Ratios, Percentages, Fractions', link: 'https://www.khanacademy.org/math/pre-algebra' },
+      evening: { subject: 'ACT English', duration: '45 min', topics: 'Grammar, Punctuation, Style', link: 'https://www.khanacademy.org/humanities/grammar' }
     },
     {
       day: 'Thursday',
-      morning: { subject: 'SAT Math - Problem Solving', duration: '45 min', topics: 'Statistics, Probability, Data analysis' },
-      evening: { subject: 'ACT Reading', duration: '45 min', topics: 'Comprehension, Literary analysis' }
+      morning: { subject: 'SAT Math - Problem Solving', duration: '45 min', topics: 'Statistics, Probability, Data analysis', link: 'https://www.khanacademy.org/math/statistics-probability' },
+      evening: { subject: 'ACT Reading', duration: '45 min', topics: 'Comprehension, Literary analysis', link: 'https://www.khanacademy.org/humanities/reading-comprehension' }
     },
     {
       day: 'Friday',
-      morning: { subject: 'SAT Math - Geometry & Trig', duration: '45 min', topics: 'Area, Volume, Trigonometry' },
-      evening: { subject: 'ACT Science', duration: '45 min', topics: 'Data interpretation, Experiments' }
+      morning: { subject: 'SAT Math - Geometry & Trig', duration: '45 min', topics: 'Area, Volume, Trigonometry', link: 'https://www.khanacademy.org/math/geometry' },
+      evening: { subject: 'ACT Science', duration: '45 min', topics: 'Data interpretation, Experiments', link: 'https://www.khanacademy.org/science' }
     }
   ];
 
@@ -86,9 +86,18 @@ const DailyPractice = () => {
                     <Typography variant="body2" fontWeight="600" gutterBottom>
                       {schedule.morning.subject}
                     </Typography>
-                    <Typography variant="caption" color="text.secondary">
+                    <Typography variant="caption" color="text.secondary" display="block" sx={{ mb: 1 }}>
                       {schedule.morning.topics}
                     </Typography>
+                    <Button
+                      variant="contained"
+                      size="small"
+                      href={schedule.morning.link}
+                      target="_blank"
+                      sx={{ textTransform: 'none', fontSize: '0.75rem' }}
+                    >
+                      Practice on Khan Academy
+                    </Button>
                   </Paper>
                 </Grid>
 
@@ -103,9 +112,18 @@ const DailyPractice = () => {
                     <Typography variant="body2" fontWeight="600" gutterBottom>
                       {schedule.evening.subject}
                     </Typography>
-                    <Typography variant="caption" color="text.secondary">
+                    <Typography variant="caption" color="text.secondary" display="block" sx={{ mb: 1 }}>
                       {schedule.evening.topics}
                     </Typography>
+                    <Button
+                      variant="contained"
+                      size="small"
+                      href={schedule.evening.link}
+                      target="_blank"
+                      sx={{ textTransform: 'none', fontSize: '0.75rem' }}
+                    >
+                      Practice on Khan Academy
+                    </Button>
                   </Paper>
                 </Grid>
               </Grid>
