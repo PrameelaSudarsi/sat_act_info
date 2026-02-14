@@ -48,32 +48,49 @@ const theme = createTheme({
   palette: {
     mode: 'light',
     primary: {
-      main: '#1976d2',
-      light: '#42a5f5',
-      dark: '#1565c0',
+      main: '#2563eb',
+      light: '#60a5fa',
+      dark: '#1e40af',
     },
     secondary: {
-      main: '#9c27b0',
+      main: '#7c3aed',
+      light: '#a78bfa',
+      dark: '#5b21b6',
     },
     background: {
-      default: '#f5f7fa',
+      default: '#f8fafc',
       paper: '#ffffff',
+    },
+    text: {
+      primary: '#1e293b',
+      secondary: '#64748b',
     },
   },
   typography: {
     fontFamily: [
       'Inter',
+      'system-ui',
       '-apple-system',
       'BlinkMacSystemFont',
       '"Segoe UI"',
       'Roboto',
-      '"Helvetica Neue"',
-      'Arial',
       'sans-serif',
     ].join(','),
-    h4: {
+    h1: {
+      fontWeight: 800,
+      letterSpacing: '-0.025em',
+    },
+    h2: {
       fontWeight: 700,
       letterSpacing: '-0.02em',
+    },
+    h3: {
+      fontWeight: 700,
+      letterSpacing: '-0.015em',
+    },
+    h4: {
+      fontWeight: 700,
+      letterSpacing: '-0.01em',
     },
     h5: {
       fontWeight: 600,
@@ -81,27 +98,45 @@ const theme = createTheme({
     },
     h6: {
       fontWeight: 600,
-      letterSpacing: '-0.01em',
+      letterSpacing: '-0.005em',
     },
     subtitle1: {
       fontWeight: 500,
+      lineHeight: 1.5,
     },
     subtitle2: {
       fontWeight: 600,
+      lineHeight: 1.5,
     },
     body1: {
-      fontSize: '0.95rem',
-      lineHeight: 1.6,
+      fontSize: '1rem',
+      lineHeight: 1.7,
+      letterSpacing: '0.00938em',
     },
     body2: {
       fontSize: '0.875rem',
-      lineHeight: 1.5,
+      lineHeight: 1.6,
+      letterSpacing: '0.01071em',
     },
-    caption: {
-      fontSize: '0.75rem',
-      lineHeight: 1.4,
+    button: {
+      fontWeight: 600,
+      letterSpacing: '0.02em',
+      textTransform: 'none',
     },
   },
+  shape: {
+    borderRadius: 12,
+  },
+  shadows: [
+    'none',
+    '0 1px 2px 0 rgb(0 0 0 / 0.05)',
+    '0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1)',
+    '0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1)',
+    '0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1)',
+    '0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1)',
+    '0 25px 50px -12px rgb(0 0 0 / 0.25)',
+    ...Array(18).fill('0 25px 50px -12px rgb(0 0 0 / 0.25)'),
+  ],
 });
 
 const drawerWidth = 280;
@@ -203,24 +238,32 @@ function App() {
       <CssBaseline />
       <Box sx={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
         {/* Header */}
-        <AppBar position="static" color="primary" elevation={2}>
-          <Toolbar>
+        <AppBar position="static" elevation={0} sx={{ 
+          bgcolor: 'white', 
+          borderBottom: '1px solid',
+          borderColor: 'divider'
+        }}>
+          <Toolbar sx={{ py: 1 }}>
             <IconButton
-              color="inherit"
               onClick={() => setDrawerOpen(!drawerOpen)}
-              sx={{ mr: 2 }}
+              sx={{ mr: 2, color: 'text.primary' }}
             >
               <MenuIcon />
             </IconButton>
-            <SchoolIcon sx={{ mr: 2 }} />
-            <Typography variant="h6" component="div" sx={{ flexGrow: 1, fontWeight: 700 }}>
-              SAT Practice Assistant
+            <SchoolIcon sx={{ mr: 1.5, color: 'primary.main', fontSize: 32 }} />
+            <Typography variant="h6" component="div" sx={{ flexGrow: 1, fontWeight: 700, color: 'text.primary' }}>
+              SAT Excellence Center
             </Typography>
             <Box sx={{ display: 'flex', alignItems: 'center', gap: 2 }}>
-              <Typography variant="body2" sx={{ display: { xs: 'none', sm: 'block' } }}>
-                {user}
-              </Typography>
-              <IconButton color="inherit" onClick={handleLogout} title="Logout">
+              <Chip 
+                label={user} 
+                size="small" 
+                sx={{ 
+                  fontWeight: 600,
+                  display: { xs: 'none', sm: 'flex' }
+                }} 
+              />
+              <IconButton onClick={handleLogout} title="Logout" sx={{ color: 'text.secondary' }}>
                 <LogoutIcon />
               </IconButton>
               <Chip
