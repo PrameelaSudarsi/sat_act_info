@@ -36,6 +36,7 @@ import {
 import MockTestCenter from './components/MockTestCenter';
 import CollegeAdmissionGuide from './components/CollegeAdmissionGuide';
 import SAT2026StudyGuide from './components/SAT2026StudyGuide';
+import DailyPractice from './components/DailyPractice';
 import ChatSession from './components/ChatSession';
 import Login from './components/Login';
 import { satApiService } from './services/satApi';
@@ -309,6 +310,7 @@ function App() {
                 </Typography>
                 <Box sx={{ display: 'flex', flexDirection: 'column', gap: 1 }}>
                   <SAT2026StudyGuide />
+                  <DailyPractice />
                   <CollegeAdmissionGuide />
                 </Box>
               </Box>
